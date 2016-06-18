@@ -27,14 +27,14 @@ app.get('/get_all.json', function (req, res) {
 			  			r.table('authors').sample(20).run(connection, function(err, cursor) {
 					    if (err) throw err;
 					    	cursor.toArray(function(err, result) {
-					        if (err){
-					        	console.log(err);
-					        	throw err
-					        }else{
-					        	res.json(result);
-					    	}
-					    });
-			  		});
+						        if (err){
+						        	console.log(err);
+						        	throw err
+						        }else{
+						        	res.json(result);
+						    	}
+					    	});
+			  			});
 				}else{
 					// if table does not exist create table
 					r.db('test').tableCreate('authors').run(connection, function(err, result) {
@@ -46,7 +46,18 @@ app.get('/get_all.json', function (req, res) {
 							    if (err){
 							    	throw err;
 							    }else{
-							    	   res.send('Table authors created and inserted fake data');
+						  		// send random data from authors table with limit 20
+						  			r.table('authors').sample(20).run(connection, function(err, cursor) {
+								    if (err) throw err;
+								    	cursor.toArray(function(err, result) {
+									        if (err){
+									        	console.log(err);
+									        	throw err
+									        }else{
+									        	res.json(result);
+									    	}
+								    	});
+						  			});
 							    }
 							});
 					    }

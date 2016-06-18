@@ -12,16 +12,18 @@ var ReactCollect = React.createClass({
         componentDidMount: function() {
           $.get("http://localhost:8081/get_all.json", function(result) {
             if (this.isMounted()) {
-              this.setState({
-                api_response: result,
-              });
+              if((typeof result) =="object"){
+                this.setState({
+                  api_response: result,
+                });
+              }
             }
           }.bind(this));
         },
         // rendering view to html page
         render: function() {
           var data = this.state.api_response;
-            if (data < 1) {
+            if (data.length < 1) {
                 return <div>No result found</div>;
             }else{
               return (
