@@ -17,6 +17,7 @@
     "body-parser": "^1.15.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
-    "multer": "^1.1.0"
+    "multer": "^1.1.0",
+    "rethinkdb": "^2.3.2"
   }
 }
