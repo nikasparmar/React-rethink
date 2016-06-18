@@ -1,0 +1,22 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "react app with rethinkd DB",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
+  "author": "nikas",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "express": "^4.14.0",
+    "jquery": "^3.0.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-masonry-component": "^4.0.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
